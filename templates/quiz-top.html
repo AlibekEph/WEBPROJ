@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{%block title%} Криптография | Викторина {%endblock%}
+
+{% block content %}
+
+    <div class="site-section site-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <span class="d-block mb-3 caption" data-aos="fade-up" data-aos-delay="100">Кто же набрал больше всех баллов?</span>
+            <h1 class="d-block mb-5 mt-4" data-aos="fade-up" data-aos-delay="200">ТОП Викторины</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section">
+      <div class="container">
+        {% if members %}
+
+          {% for member in members %}
+              <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4">
+
+                    <h2 class="mb-4">{{member.name}}</h2>
+
+                    <h2 class="mb-0">{{member.scores}}/10</h2>
+
+
+              </div>
+          {% endfor %}
+
+        {% endif %}
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+      
+{% endblock %}

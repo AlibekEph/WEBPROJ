@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{%block title%} Криптография | Мой шифр {%endblock%}
+
+{% block content %}
+
+    <div class="site-section site-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <span class="d-block mb-3 caption" data-aos="fade-up" data-aos-delay="100">Псведорандомные алфавитные скачки</span>
+            <h1 class="d-block mb-5 mt-4" data-aos="fade-up" data-aos-delay="200">Permutation Unicode</h1>
+            <a href="/info" class="btn-custom" data-aos="fade-up" data-aos-delay="400"><span>О криптографии</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section">
+      <div class="container">
+        <p class=" mb-5">
+         Этот шифр я разработал самостоятельно, чтобы показать - не нужно быть профи, чтобы создать что-то свое в этой сфере. <br>
+         Название шифра говорит само за себя: Unicode перестановка. Но что же такое Unicode? <br><br>
+         Юнико́д или Унико́д — стандарт кодирования символов, включающий в себя знаки почти всех письменных языков мира. В настоящее время стандарт является преобладающим в Интернете. Стандарт предложен в 1991 году некоммерческой организацией «Консорциум Юникода».
+        </p>
+
+        <p class="mb-5 mt-5">
+          То есть, Unicode - таблица символов, в которой каждому номеру принадлежит свой символ.<br>
+          Исходя из этого, я создал алгоритм, который проходится по строке, которую нужно зашифровать и получает позицию каждого символа в строке. Затем я написал свой простейший генератор рандомных чисел, используя время.<br>
+          Представим рандомное число как k, а позицию символа в Unicode как q. Тогда, нам нужно такое число, что q > k. Генератор выдает нам такое число, и мы отнимаем от q значнение k и получаем число, которое мы записываем в зашифрованную строку.<br>
+          Далее, само число k мы добавляем к ключу. И так с каждым символом в строке, которую мы хотим зашифровать.<br><br>
+
+          Таким образом, на выходе мы получаем две строки: зашифрованную строку и ключ для дешифровки.<br><br>
+          
+          Дешифровка происходит аналогичным алгоритмом, только наборот: мы получаем две строки: сам текст и ключ, затем мы проходимся по обоем строкам одновременно, и элементы с одинаковой позицией в наших списках мы суммируем, 
+          получая исходный код Unicode. Такое мы проделываем со всей строкой и на выходе получаем строку из кодов Unicode. Осталось поочередно перевести коды в символы, согласно таблице.<br><br>
+          
+          Ниже представлены онлайн шифратор и дешифратор, для того, чтобы вы смогли использовать этот шифр.
+
+
+                                                
+        </p>
+        <div class="row">
+
+          <div class="col-md-6 col-sm-12 text-center mb-5">
+            <div class="ex-block p-3">
+              <h4 class="mb-4 mt-3">Шифровка</h4>
+              <form method="POST">
+                  <input type="text" class="form-control mt-3 mb-4" placeholder="Текст для шифровки" id="e_text" name="e_text" required="">
+                  <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-4" name="btn" value="Зашифровать">Зашифровать</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 text-center">
+            <div class="ex-block p-3">
+              <h4 class="mb-4 mt-3">Дешифровка</h4>
+              <form method="POST">
+                  <input type="text" class="form-control mt-3 mb-4" placeholder="Текст для шифровки" id="d_text" name="d_text" required="">
+                  <input type="text" class="form-control mt-3 mb-4" placeholder="Ключ" name="d_key" id="d_key" required="">
+                  <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-4" name="btn" value="Дешифровать">Дешифровать</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+
+    {% if d_final %} 
+    <div class="form-wrapper" id="d_form">
+		<div class="crypt-form">
+			<p class="mb-1 crypt-header">Сообщение:</p>
+			<p class="mb-3">{{d_final}}</p>
+			<button type="button" class="text-center ads-btn ads-true d-block w-100 mt-4" id="d_btn">Закрыть</button>
+		</div>
+	</div> 
+    {% endif %}
+
+    {% if e_final %} 
+    <div class="form-wrapper" id="e_form">
+		<div class="crypt-form">
+			<p class="mb-1 crypt-header">Сообщение:</p>
+			<p class="mb-3">{{e_final}}</p>
+			<p class="mb-1 crypt-header">Ключ:</p>
+			<p>{{e_key_final}}</p>
+			<button type="button" class="text-center ads-btn ads-true d-block w-100 mt-4" id="e_btn">Закрыть</button>
+		</div>
+	</div> 
+    {% endif %}
+{% endblock %}

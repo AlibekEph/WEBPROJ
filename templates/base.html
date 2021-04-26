@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>{%block title%} {%endblock%}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	
+	<meta name="author" content="Руслан Качмазов">
+	<meta name="description" content="Теория по криптографии, примеры шифров и викторина для начинающих">
+	<meta name="keywords" content="криптография, шифр Цезаря, XOR, шифры, crytography, шифр замены, омофонический шифр, теория криптографии, что такое криптография, шифр XOR, викторина по криптографии, тест криптография">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/jquery-ui.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='fonts/flaticon/font/flaticon.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body>
+
+	<div class="site-wrap">
+
+		<div class="site-mobile-menu">
+			<div class="site-mobile-menu-header">
+				<div class="site-mobile-menu-close mt-3">
+					<span class="icon-close2 js-menu-toggle"></span>
+				</div>
+			</div>
+			<div class="site-mobile-menu-body"></div>
+		</div>
+
+		<header class="site-navbar py-3" role="banner">
+			<div class="container pr-sm-0 pl-sm-0">
+				<div class="row align-items-center">
+					<div class="col-11 col-xl-2">
+						<h1 class="mb-0"><a href="/" class="text-white h2 mb-0"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="162" height="62"></a></h1>
+					</div>
+					<div class="col-12 col-md-10 d-none d-xl-block">
+						<nav class="site-navigation position-relative text-right" role="navigation">
+							<ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+
+								<li class="{% if request.path == '/at/' %} active {% endif %}"><a href="/at/">Мой шифр</a></li>
+
+								<li class="{% if request.path == '/caesar/' %} active {% endif %}"><a href="/caesar/">Шифр Цезаря</a></li>
+
+								<li class="{% if request.path == '/xor/' %} active {% endif %}"><a href="/xor/">Шифр XOR</a></li>
+
+								<li class="{% if request.path == '/replacement/' %} active {% endif %}"><a href="/replacement/">Шифр замены</a></li>
+
+								<li class="{% if request.path == '/quiz-top/' %} active {% endif %}"><a href="/quiz-top/">ТОП Викторины</a></li>
+
+								<li class="cta"><a href="/quiz/">Викторина</a></li>
+
+							</ul>
+						</nav>
+					</div>
+					<div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	
+	{% block content %}
+
+	{% endblock %}
+
+
+
+<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery-migrate-3.0.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.countdown.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/crypt-form.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+{%block title%} Криптография | Викторина {%endblock%}
+
+{% block content %}
+
+    <div class="site-section site-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <span class="d-block mb-3 caption" data-aos="fade-up" data-aos-delay="100">Проверим твои знания</span>
+            <h1 class="d-block mb-5 mt-4" data-aos="fade-up" data-aos-delay="200">Викторина</h1>
+            <a href="/info/" class="btn-custom" data-aos="fade-up" data-aos-delay="400"><span>О криптографии</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    {% if request.path == '/quiz/0/' %}
+
+        <div class="container">
+          <form method="POST">
+              <div class="col-md-12 col-lg-12 col-sm-12 mb-3 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                  <input type="text" class='form-control w-100' placeholder="Ваше имя и фамилия" name="name" id="name" required="">
+
+              </div>
+
+              <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Начать викторину">Начать викторину</button>
+
+
+          </form>
+        </div>
+
+    {% endif %}
+
+    {% if request.path == '/quiz/1/' %}
+
+        <div class="container">
+          <form method="POST">
+              <div class="col-md-12 col-lg-12 col-sm-12 mb-3 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                    <h2 class="mb-4">Вопрос 1</h2>
+
+                    <h5 class="mt-4 mb-4">Что такое "криптосинтез"?</h5>
+
+                    <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">Область криптографии, отвечающая за взлом информации</p>
+
+                    <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">Область криптографии, отвечающая за защиту информации</p>
+
+                    <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">Область криптографии, отвечающая за XOR шифрование</p>
+
+                    <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Ничего из вышеперечисленного</p>
+
+              </div>
+
+              <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+
+
+          </form>
+        </div>
+
+      {% endif %}
+
+      {% if request.path == '/quiz/2/' %}
+
+        <div class="container">
+          <form method="POST">
+            <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                  <h2 class="mb-4">Вопрос 2</h2>
+
+                  <h5 class="mt-4 mb-4">Что такое "криптоанализ"?</h5>
+
+                  <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">Область криптографии, отвечающая за взлом информации</p>
+
+                  <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">Область криптографии, отвечающая за защиту информации</p>
+
+                  <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">Область криптографии, отвечающая за XOR шифрование</p>
+
+                  <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Ничего из вышеперечисленного</p>
+
+            </div>
+
+            <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+          </form>
+        </div>
+
+      {%  endif %}
+
+
+        {% if request.path == '/quiz/3/' %}
+
+          <div class="container">
+            <form method="POST">
+              <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                    <h2 class="mb-4">Вопрос 3</h2>
+
+                    <h5 class="mt-4 mb-4">Эффективен ли шифр Цезаря в наши дни?</h5>
+
+                    <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">Да, эффективен</p>
+
+                    <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">Нет, не эффективен</p>
+
+                    <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">Сам по себе - нет, только в составе более сложных шифров</p>
+
+                    <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Такого шифра не существует</p>
+
+              </div>
+
+              <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+            </form>
+          </div>
+
+        {%  endif %}
+
+
+          {% if request.path == '/quiz/4/' %}
+
+            <div class="container">
+              <form method="POST">
+                <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                      <h2 class="mb-4">Вопрос 4</h2>
+
+                      <h5 class="mt-4 mb-4">Как можно расшифровать название XOR?</h5>
+
+                      <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">X-ing Or</p>
+
+                      <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">XOR - от русского слова хор</p>
+
+                      <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">eXclusive OR</p>
+
+                      <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Просто набор букв</p>
+
+                </div>
+
+                <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+              </form>
+            </div>
+
+          {%  endif %}
+
+
+          {% if request.path == '/quiz/5/' %}
+
+            <div class="container">
+              <form method="POST">
+                <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                      <h2 class="mb-4">Вопрос 5</h2>
+
+                      <h5 class="mt-4 mb-4">Что лежит в основе XOR шифрования?</h5>
+
+                      <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">Побитовое И</p>
+
+                      <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">Побитовое ИЛИ</p>
+
+                      <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">Побитовое Отрицание</p>
+
+                      <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Исключающее ИЛИ</p>
+
+                </div>
+
+                <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+              </form>
+            </div>
+
+            {%  endif %}
+
+
+            {% if request.path == '/quiz/6/' %}
+
+              <div class="container">
+                <form method="POST">
+                  <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                        <h2 class="mb-4">Вопрос 6</h2>
+
+                        <h5 class="mt-4 mb-4">Что такое ASCII?</h5>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">Порода собаки</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">Программистский термин для ПО разработки</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">Утвержденная таблица символов</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Ничего из вышеперечисленного</p>
+
+                  </div>
+
+                  <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+                </form>
+              </div>
+
+            {%  endif %}
+
+
+            {% if request.path == '/quiz/7/' %}
+
+              <div class="container">
+                <form method="POST">
+                  <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                        <h2 class="mb-4">Вопрос 7</h2>
+
+                        <h5 class="mt-4 mb-4">Методы криптографии:</h5>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">Одноключевые, безключевые</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">Двухключевые, одноключевые, безключевые</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">Шестиключевые, трехключевые, безключевые</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Ничего из вышеперечисленного</p>
+
+                  </div>
+
+                  <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+                </form>
+              </div>
+
+            {% endif %}
+
+            {% if request.path == '/quiz/8/' %}
+
+              <div class="container">
+                <form method="POST">
+                  <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                        <h2 class="mb-4">Вопрос 8</h2>
+
+                        <h5 class="mt-4 mb-4">Что на греческом значит "критография"?</h5>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">Шифрование</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">Тайна</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">Тайнопись</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Случайные числа</p>
+
+                  </div>
+
+                  <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+                </form>
+              </div>
+
+            {% endif %}
+
+            {% if request.path == '/quiz/9/' %}
+
+              <div class="container">
+                <form method="POST">
+                  <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                        <h2 class="mb-4">Вопрос 9</h2>
+
+                        <h5 class="mt-4 mb-4">Когда появилось омофоническое шифрование?</h5>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">В 17 веке</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">В 15 веке</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">В 14 веке</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Вчера</p>
+
+                  </div>
+
+                  <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+                </form>
+              </div>
+
+            {% endif %}
+
+            {% if request.path == '/quiz/10/' %}
+
+              <div class="container">
+                <form method="POST">
+                  <div class="col-md-12 col-lg-12 col-sm-12 mb-5 mb-lg-5 blog-entry p-4"  data-aos="fade-up" data-aos-delay="200">
+
+                        <h2 class="mb-4">Вопрос 10</h2>
+
+                        <h5 class="mt-4 mb-4">Нужно ли вводить целочисленный ключ для омофонического шифрования?</h5>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="1" class="mr-3">Да</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="2" class="mr-3">Нет</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="3" class="mr-3">Иногда</p>
+
+                        <p class="mt-4 mb-4"><input type="radio" name="question" value="4" class="mr-3">Ключи нужны только для дверей</p>
+
+                  </div>
+
+                  <button type="submit" class="text-center ads-btn ads-true mb-4 d-block w-100 mt-2" name="btn" value="Ответить">Ответить</button>
+                </form>
+              </div>
+
+            {% endif %}
+    </div>    
+
+
+      
+{% endblock %}
